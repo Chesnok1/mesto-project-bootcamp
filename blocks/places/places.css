@@ -1,0 +1,18 @@
+.places {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 17px;
+  row-gap: 20px;
+  justify-content: center;
+}
+
+@media (max-width: 400px) {
+  .places {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    column-gap: 0px;
+  }
+}

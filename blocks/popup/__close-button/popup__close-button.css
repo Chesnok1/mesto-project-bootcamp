@@ -1,0 +1,14 @@
+.popup__close-button {
+  margin-left: 450px;
+  cursor: pointer;
+}
+.popup__close-button:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 520px) {
+  .popup__close-button {
+    margin-left: 260px;
+    margin-bottom: 10px;
+  }
+}

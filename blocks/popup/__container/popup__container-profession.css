@@ -1,0 +1,13 @@
+.popup__container-profession {
+  width: 358px;
+  border: 0;
+  border-bottom: 1px solid #0000002e;
+  margin-bottom: 48px;
+  padding-bottom: 13px;
+  font-family: inherit;
+}
+@media (max-width: 520px) {
+  .popup__container-profession {
+    width: 238px;
+  }
+}

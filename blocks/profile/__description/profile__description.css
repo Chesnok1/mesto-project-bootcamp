@@ -1,0 +1,19 @@
+.profile__description {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 549px;
+}
+
+@media (max-width: 1045px) {
+  .profile__description {
+    flex-basis: 0;
+    margin-bottom: 36px;
+  }
+}
+
+@media (max-width: 400px) {
+  .profile__description {
+    flex-basis: 0;
+    margin-bottom: 36px;
+  }
+}
