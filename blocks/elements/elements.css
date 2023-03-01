@@ -1,21 +1,3 @@
-/*.elements {
-  margin: 50px 200px 0 200px;
-}
-
-@media (max-width: 1279px) {
-  .elements {
-    margin: 50px 50px 0 50px;
-  }
-}
-
-@media (max-width: 400px) {
-  .elements {
-    max-width: 320px;
-    padding: 0;
-    margin: 36px 19px 0 19px;
-  }
-}
-*/
 .elements {
   margin-top: 50px;
 }

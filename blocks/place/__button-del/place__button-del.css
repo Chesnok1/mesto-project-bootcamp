@@ -1,0 +1,14 @@
+.place__button-del {
+  cursor: pointer;
+  border: none;
+  background-image: url(../../../images/DeleteButton.svg);
+  width: 22px;
+  height: 19px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 14px;
+  left: 250px;
+}
