@@ -5,6 +5,9 @@
   line-height: 48px;
   /* or 114% */
   margin: 0 0 16px 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 @media (max-width: 400px) {
   .profile__author {

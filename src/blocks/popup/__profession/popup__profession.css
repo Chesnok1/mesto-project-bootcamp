@@ -2,9 +2,10 @@
   width: 358px;
   border: 0;
   border-bottom: 1px solid #0000002e;
-  margin-bottom: 48px;
+  margin-bottom: 5px;
   padding-bottom: 13px;
   font-family: inherit;
+  margin-top: 13px;
 }
 @media (max-width: 520px) {
   .popup__profession {

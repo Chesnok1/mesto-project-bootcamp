@@ -1,0 +1,31 @@
+{
+  "name": "yandex_praktikum",
+  "version": "1.0.0",
+  "description": "Проект: Место Создан для публикации фотографий с целью поделиться своими интересами. Ссылка на страницу проекта : https://chesnok1.github.io/mesto-project-bootcamp/",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack serve",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.3",
+    "cssnano": "^5.1.15",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.7.3",
+    "postcss-loader": "^7.0.2",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.12.0"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.20.2",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^9.1.2",
+    "loader": "^2.1.1"
+  }
+}
