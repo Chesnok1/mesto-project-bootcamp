@@ -1,5 +1,5 @@
-import { checkValidity } from "./utils";
-import { toggleButton } from "./validate";
+import { toggleButtonState } from "./validate";
+import { isValid } from "./validate";
 export const popup = document.querySelectorAll(".popup");
 export const popupEdit = document.querySelector(".popup_type_edit");
 export const popupNew = document.querySelector(".popup_type_new");
@@ -7,9 +7,8 @@ const authorName = document.getElementById("authorName");
 const authorProfession = document.getElementById("authorProfession");
 export const popupBigPicture = document.querySelector(".popup_type_picture");
 export const inputAll = document.querySelectorAll(".popup__input");
+
 export const closeClickOverlay = (evt) => {
-  console.log(evt.target);
-  console.log(evt.currentTarget);
   if (evt.target === evt.currentTarget) {
     closePopup(evt.target);
   }
@@ -22,17 +21,39 @@ export const closeKeyEsc = (evt) => {
   }
 };
 
-function validation() {
-  inputAll.forEach((inputElement) => {
-    checkValidity(inputElement);
+export const setEventListeners = (popupForm) => {
+  const inputList = Array.from(popupForm.querySelectorAll(".popup__input"));
+  const buttonElement = popupForm.querySelector(".popup__button");
+  toggleButtonState(inputList, buttonElement);
+  inputList.forEach((formInput) => {
+    formInput.addEventListener("input", () => {
+      isValid(popupForm, formInput);
+      toggleButtonState(inputList, buttonElement);
+    });
   });
-  toggleButton();
-}
+};
+
+export const enableValidation = () => {
+  const formList = Array.from(document.querySelectorAll(".popup__form"));
+  formList.forEach((popupForm) => {
+    popupForm.addEventListener("submit", (evt) => {
+      evt.preventDefault();
+    });
+    setEventListeners(popupForm);
+  });
+};
+
+// function validation() {
+//   inputAll.forEach((inputElement) => {
+//     checkValidity(inputElement);
+//   });
+//   toggleButton();
+// }
 export function openPopup(name) {
   name.classList.add("popup_opened");
   document.addEventListener("keydown", closeKeyEsc);
   popup.forEach((item) => item.addEventListener("click", closeClickOverlay));
-  validation();
+  enableValidation();
 }
 export function closePopup(name) {
   name.classList.remove("popup_opened");

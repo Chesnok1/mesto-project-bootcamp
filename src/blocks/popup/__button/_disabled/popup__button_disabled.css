@@ -5,3 +5,6 @@
   border: 1px solid black;
   cursor: none;
 }
+.popup__button_disabled:hover {
+  opacity: 20%;
+}

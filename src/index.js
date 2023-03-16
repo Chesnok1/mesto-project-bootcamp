@@ -13,9 +13,7 @@ import {
   popupBigPicture,
   inputAll,
 } from "./components/modal.js";
-import { toggleButton } from "./components/validate.js";
-import { checkValidity } from "./components/utils";
-
+import { enableValidation } from "./components/validate.js";
 const buttonOpenEditPopup = document.querySelector(".profile__edit-button");
 const buttonCloseEditPopup = popupEdit.querySelector(".popup__close-button");
 const buttonOpenNew = document.querySelector(".profile__big-button");
@@ -53,12 +51,12 @@ const initialCards = [
   },
 ];
 
-inputAll.forEach((inputElement) => {
-  inputElement.addEventListener("input", () => {
-    checkValidity(inputElement);
-    toggleButton();
-  });
-});
+// inputAll.forEach((inputElement) => {
+//   inputElement.addEventListener("input", () => {
+//     checkValidity(inputElement);
+//     toggleButton();
+//   });
+// });
 buttonOpenEditPopup.addEventListener("click", () => openPopup(popupEdit));
 buttonCloseEditPopup.addEventListener("click", () => closePopup(popupEdit));
 buttonOpenNew.addEventListener("click", () => openPopup(popupNew));
@@ -68,7 +66,6 @@ formEdit.addEventListener("submit", handleSubmitName);
 
 function renderCard(obj) {
   const cardElement = createCard(obj, openCardImagePopup);
-  console.log(cardsArea);
   obj && cardsArea.prepend(cardElement);
 }
 function renderInitialCards() {
@@ -104,10 +101,19 @@ function openCardImagePopup(placeImage) {
 
 buttonCloseBigPicture.addEventListener("click", () => closeCardImagePopup());
 
-const setEventListeners = (formElement) => {
-  const inputList = Array.from(formElement.querySelectorAll(".popup__input"));
-  const buttonElement = formElement.querySelector(".popup__button");
-  toggleButtonState(inputList, buttonElement);
-};
+// const setEventListeners = (formElement) => {
+//   const inputList = Array.from(formElement.querySelectorAll(".popup__input"));
+//   const buttonElement = formElement.querySelector(".popup__button");
+//   toggleButtonState(inputList, buttonElement);
+// };
 
 renderCard();
+/*_______________________________________*/
+enableValidation({
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__button",
+  inactiveButtonClass: "popup__button_disabled",
+  inputErrorClass: "popup__input_type_error",
+  errorClass: "popup__error_visible",
+});
