@@ -12,7 +12,7 @@ const getResponse = (res) => {
   return Promise.reject(`Ошибка ${res.status}`);
 };
 
-export const getInitialCards = () => {
+export const getCards = () => {
   return fetch(`${config.baseUrl}/cards`, {
     headers: config.headers,
   }).then(getResponse);
@@ -24,7 +24,7 @@ export const getUser = () => {
   }).then(getResponse);
 };
 
-export const addUser = (name, about) => {
+export const changeUser = (name, about) => {
   return fetch(`${config.baseUrl}/users/me`, {
     method: "PATCH",
     headers: config.headers,
@@ -60,12 +60,12 @@ export const removeLike = (id) => {
   }).then(getResponse);
 };
 
-export const addAvatar = (avatar) => {
+export const patchAvatar = (avatar) => {
   return fetch(`${config.baseUrl}/users/me/avatar`, {
     method: "PATCH",
     headers: config.headers,
     body: JSON.stringify({
-      avatar: avatar,
+      profileAvatar: avatar,
     }),
   }).then(getResponse);
 };

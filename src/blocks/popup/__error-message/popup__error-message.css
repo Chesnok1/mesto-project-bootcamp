@@ -9,3 +9,8 @@
   width: 358px;
   min-height: 30px;
 }
+@media (max-width: 520px) {
+  .popup__error-message {
+    width: 238px;
+  }
+}

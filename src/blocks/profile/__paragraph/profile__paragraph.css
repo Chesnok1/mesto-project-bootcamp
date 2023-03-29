@@ -1,4 +1,5 @@
 .profile__paragraph {
+  max-width: 400px;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -6,6 +7,7 @@
   margin: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-overflow: ellipsis;
   overflow: hidden;
 }
 
@@ -19,5 +21,6 @@
   .profile__paragraph {
     font-size: 14px;
     line-height: 17px;
+    align-self: center;
   }
 }
