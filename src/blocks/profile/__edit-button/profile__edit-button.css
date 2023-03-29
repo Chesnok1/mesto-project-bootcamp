@@ -9,16 +9,18 @@
   background-color: transparent;
   padding: 0;
   cursor: pointer;
-  position: absolute;
-  top: 15px;
-  left: 306px;
+  transition: 0.3s;
 }
+.profile__edit-button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
 @media (max-width: 400px) {
   .profile__edit-button {
-    top: 10px;
-    left: 196px;
     width: 18px;
     height: 18px;
-    border: 1px solid white;
+    align-self: baseline;
+    background-size: 7.5px;
   }
 }

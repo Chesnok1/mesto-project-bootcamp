@@ -12,12 +12,19 @@
     </header>
     <main class="content">
       <section class="profile">
-        <img class="profile__avatar" src="./images/image.jpg" alt="Аватар" />
+        <img
+          class="profile__avatar"
+          src="<%=require('./images/image.jpg')%>"
+          alt="Аватар"
+        />
+        <button class="profile__avatar-edit" type="button"></button>
         <div class="profile__description">
-          <h1 class="profile__author" id="authorName">Жак-Ив Кусто</h1>
-          <p class="profile__paragraph" id="authorProfession">
-            Исследователь океана
-          </p>
+          <div class="profile__titles">
+            <h1 class="profile__author" id="authorName">Жак-Ив Кусто</h1>
+            <p class="profile__paragraph" id="authorProfession">
+              Исследователь океана
+            </p>
+          </div>
           <button class="profile__edit-button hover-like"></button>
         </div>
         <button class="profile__big-button hover-big-button" type="button">
@@ -115,6 +122,47 @@
         </form>
       </div>
     </div>
+
+    <div class="popup popup_type_delete-confirm">
+      <div class="popup__container popup__container_type_all">
+        <button class="popup__close-button" type="button"></button>
+        <h2 class="popup__header">Вы уверены?</h2>
+        <button class="popup__button popup__button-submit-card" type="button">
+          Да
+        </button>
+      </div>
+    </div>
+
+    <div class="popup popup_type_avatar-edit">
+      <div class="popup__container popup__container_type_all">
+        <button class="popup__close-button" type="button"></button>
+        <form
+          class="popup__form popup__form-avatar"
+          name="avatar"
+          action="#"
+          method="get"
+          id="avatar"
+          novalidate
+        >
+          <h2 class="popup__header">Обновить аватар</h2>
+          <input
+            class="popup__input popup__avatar"
+            placeholder="Ссылка на картинку"
+            type="url"
+            id="avatar-url"
+            name="avatar-url"
+            required
+          />
+          <span id="error-avatar-url" class="popup__error-message"></span>
+          <button
+            class="popup__button popup__button-submit-avatar"
+            type="submit"
+          >
+            Сохранить
+          </button>
+        </form>
+      </div>
+    </div>
     <template class="element-template" id="element-template">
       <li class="place">
         <img
@@ -124,7 +172,13 @@
         />
         <div class="place__footer">
           <h2 class="place__name">Карачаевск</h2>
-          <button class="place__button-like hover-like" type="button"></button>
+          <div class="place__like-area">
+            <button
+              class="place__button-like hover-like"
+              type="button"
+            ></button>
+            <p class="place__like-number">0</p>
+          </div>
         </div>
         <button class="place__button-del hover-like" type="button"></button>
       </li>

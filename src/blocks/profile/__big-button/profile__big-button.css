@@ -4,14 +4,24 @@
   width: 150px;
   height: 50px;
   padding: 0;
+  margin-left: auto;
 }
 .profile__big-button:hover {
   opacity: 0.6;
   cursor: pointer;
 }
 
-@media (max-width: 1045px) {
+@media screen and (max-width: 1050px) {
   .profile__big-button {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .profile__big-button {
+    margin: 0;
+    background-size: 16px;
     width: 282px;
   }
 }

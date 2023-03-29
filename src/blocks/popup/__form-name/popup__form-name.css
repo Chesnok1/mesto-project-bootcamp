@@ -1,8 +1,13 @@
 .popup__form-name {
-  width: 100%;
+  width: 358px;
   border: 0;
   border-bottom: 1px solid #0000002e;
   margin-bottom: 5px;
   padding-bottom: 13px;
   font-family: inherit;
+}
+@media (max-width: 520px) {
+  .popup__form-name {
+    width: 238px;
+  }
 }

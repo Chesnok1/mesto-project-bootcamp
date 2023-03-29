@@ -1,0 +1,8 @@
+.popup__avatar {
+  border: 0;
+  border-bottom: 1px solid #0000002e;
+  font-family: inherit;
+  margin-bottom: 5px;
+  padding-bottom: 13px;
+  width: 100%;
+}
