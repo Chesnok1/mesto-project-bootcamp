@@ -33,7 +33,9 @@ export function createCard(obj, openCardImagePopup) {
   }
   return;
 }
-const AreYouShurePopup = document.querySelector(".popup_type_delete-confirm");
+export const AreYouShurePopup = document.querySelector(
+  ".popup_type_delete-confirm"
+);
 const buttonShureConfirm = AreYouShurePopup.querySelector(
   ".popup__button-submit-card"
 );
@@ -46,7 +48,7 @@ function openTrashPopup(cardId) {
   AreYouShurePopup.id = cardId;
 }
 function shureDeleteTrashPopup() {
-  document.querySelector(".places").innerHTML = "";
+  // document.querySelector(".places").innerHTML = "";
   deleteCard(AreYouShurePopup.id).then(() => {
     getCards().then((cards) => {
       cards.reverse().forEach(renderCard);

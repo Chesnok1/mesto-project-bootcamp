@@ -1,6 +1,7 @@
 import { enableValidation } from "./validate";
 import { validitySettings } from "../index";
 import { changeUser } from "./api";
+import { AreYouShurePopup } from "./card";
 export const popups = document.querySelectorAll(".popup");
 export const popupEdit = document.querySelector(".popup_type_edit");
 export const popupNew = document.querySelector(".popup_type_new");
@@ -21,6 +22,7 @@ export const closeKeyEsc = (evt) => {
     closePopup(popupNew);
     closePopup(popupAvatar);
     closePopup(popupBigPicture);
+    closePopup(AreYouShurePopup);
   }
 };
 

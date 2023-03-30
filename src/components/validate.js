@@ -9,10 +9,7 @@ const showInputError = (formElement, inputElement, settings) => {
 };
 
 const hideInputError = (formElement, inputElement, settings) => {
-  console.log("hideInputError.formElement", formElement);
-  console.log("hideInputError.inputElement", inputElement);
   const formError = formElement.querySelector(`#error-${inputElement.id}`);
-  console.log("hideInputError.formError", formError);
   inputElement.classList.remove(settings.errorClass);
   formError.classList.remove(settings.inpputErrorClass);
   formError.textContent = "";

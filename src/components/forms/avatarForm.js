@@ -1,7 +1,9 @@
 import { openPopup, closePopup } from "../modal";
 import { patchAvatar } from "../api";
+import { profileAvatar } from "../..";
+import { popupAvatar } from "../modal";
 const formAvatar = document.getElementById("avatar");
-const popupAvatar = document.querySelector(".popup_type_avatar-edit");
+// const popupAvatar = document.querySelector(".popup_type_avatar-edit");
 const inputAvatar = document.querySelector(".popup__avatar");
 const buttonSubmitAvatar = document.querySelector(
   ".popup__button-submit-avatar"
@@ -21,7 +23,7 @@ const handleSubmitAvatar = (evt) => {
   patchAvatar(`${inputAvatar.value}`)
     .then((res) => {
       profileAvatar.src = res.avatar;
-      profile.avatar = res.avatar;
+      evt.target.reset();
     })
     .then(() => {
       closePopup(popupAvatar);

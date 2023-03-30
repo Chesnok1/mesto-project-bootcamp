@@ -65,7 +65,7 @@ export const patchAvatar = (avatar) => {
     method: "PATCH",
     headers: config.headers,
     body: JSON.stringify({
-      profileAvatar: avatar,
+      avatar: avatar,
     }),
   }).then(getResponse);
 };

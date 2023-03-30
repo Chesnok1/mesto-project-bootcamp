@@ -26,7 +26,7 @@ const cardsArea = document.querySelector(".places");
 const authorInput = document.querySelector(".popup__form-name");
 const professionInput = document.querySelector(".popup__profession");
 const popupImage = document.querySelector(".popup__img");
-const profileAvatar = document.querySelector(".profile__avatar");
+export const profileAvatar = document.querySelector(".profile__avatar");
 const imgTitle = document.querySelector(".popup__img-title");
 const buttonCloseBigPicture = document.querySelector("#close-big-picture");
 const initialCards = [];
@@ -61,7 +61,7 @@ function addNewCard(event) {
       cards.reverse().forEach(renderCard);
     });
   });
-  document.querySelector(".places").innerHTML = "";
+  // document.querySelector(".places").innerHTML = "";
   closePopup(popupNew);
   event.target.reset();
 }
@@ -98,7 +98,6 @@ Promise.all([getUser(), getCards()])
     authorInput.value = userData.name;
     professionInput.value = userData.about;
     cards.reverse().forEach(renderCard);
-    console.log(cards.reverse());
   })
   .catch((err) => {
     console.log(`Ошибка: ${err}`);
